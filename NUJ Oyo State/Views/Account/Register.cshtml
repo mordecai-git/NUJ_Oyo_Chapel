@@ -1,0 +1,327 @@
+﻿@model NUJ_Oyo_State.Models.MembershipRequestVM
+
+@{
+    ViewBag.Title = "NUJ - Register";
+}
+
+@*Croppie for cropping images*@
+<link href="~/Content/croppie.css" rel="stylesheet" />
+<link href="~/Content/auth.css" rel="stylesheet" />
+
+@*font awesome*@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+@*style for choosing profile image*@
+<style>
+    #imagePreview {
+        width: 180px;
+        height: 180px;
+        background-position: center center;
+        background-size: cover;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+        display: inline-block;
+    }
+
+    .upload-msg {
+        text-align: center;
+        padding-top: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 22px;
+        color: #aaa;
+        width: inherit;
+        height: 420px;
+        margin: 10px auto;
+        border: 1px solid #aaa;
+    }
+
+    .upload-demo.ready #upload-demo {
+        display: block;
+    }
+
+    .upload-demo.ready .buttons .upload-result, .upload-demo.ready .buttons .reset {
+        display: inline;
+    }
+
+    .upload-demo #upload-demo, .upload-demo .buttons .upload-result, .upload-demo .buttons .reset, .upload-demo.ready .upload-msg {
+        display: none;
+    }
+
+    #upload {
+        position: absolute;
+        top: -1000px;
+    }
+
+    .fa-check {
+        display: none;
+    }
+
+    .show {
+        display: inherit !important;
+    }
+</style>
+
+<section class="reg-wrapper">
+
+    <div class="row">
+        <div class="col-lg-4 reg__left fixed"
+             style="background: #777 url(https://images.unsplash.com/photo-1560168181-e8ffbe79e93d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max) center center no-repeat;
+                ">
+            <div class="container">
+                <div class="d-flex welcome-text flex-column justify-content-center align-items-center text-white">
+                    <h1 class="display-4">Join the Community</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7 reg__right">
+            <div class="justify-content-center align-item-center">
+
+                @if (TempData["SM"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SM"]
+                    </div>
+                }
+
+                <h3 class="text-center display-4 mb-3">JOIN NUJ OYO STATE CHAPTER</h3>
+
+                <div class="form-wrapper">
+                    <form action="/Account/Register" method="post" novalidate="novalidate" class="form">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <fieldset>
+                            <legend>Personal Information</legend>
+
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="FirstName">First Name</label>
+                                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col">
+                                    <label for="OtherNames">Other Names</label>
+                                    @Html.EditorFor(model => model.OtherNames, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.OtherNames, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="Email">Email Address</label>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group col">
+                                    <label for="Phone">Phone Number</label>
+                                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Address">Address</label>
+                                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="City">City</label>
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="State">State</label>
+                                    @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="Zip">Zip</label>
+                                    @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Zip, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="StateOfOrigin">State of Origin</label>
+                                    @Html.EditorFor(model => model.StateOfOrigin, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StateOfOrigin, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label for="DOB">Birth Date</label>
+                                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Date of Birth must be a date." data-val-required="The Date of Birth field is required." id="DOB" name="DOB" type="date" value="">
+                                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="Gender">Gender</label>
+                                    @Html.DropDownListFor(m => m.Gender, new List<SelectListItem>
+                                    {
+                                           new SelectListItem { Text="Male", Value="1", Selected=true},
+                                           new SelectListItem { Text = "Female", Value = "2" }
+                                    }, new { @class = "form-control show" })
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Other Information</legend>
+
+                            <div class="form-group">
+                                <label for="Address">Membership ID</label>
+                                @Html.EditorFor(model => model.MembershipId, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.MembershipId, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">Branch</label>
+                                @Html.EditorFor(model => model.Branch, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Branch, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">Designation</label>
+                                @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                            </div>
+
+                            @Html.HiddenFor(model => model.ImageString)
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-upload" data-toggle="modal" data-target="#exampleModal">
+                                Choose Profile Image <i class="fa fa-check"></i>
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Add a Profile Picture</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" style="height: 500px; padding: 0.5rem; width: auto;">
+
+                                            <div class="upload-demo">
+                                                <input type="file" id="upload" value="Choose a file" accept="image/*" data-role="none" />
+
+                                                <div class="col-1-2" style="margin: 0 auto;display:table;">
+                                                    <div class="upload-msg">
+                                                        Click to upload a profile image
+                                                    </div>
+
+                                                    <div id="upload-demo"></div>
+
+                                                    <div class="buttons" style="margin:0 auto;display:table;">
+                                                        <button id="btn" class="upload-result">Use This Image</button>
+                                                        <button id="btn" class="reset" style="margin-left:5px;">Remove Image</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <button type="button" class="btn my-3 btn-block btn-reg" onclick="submitForm()">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @*Javascript plugin for croppie*@
+    <script src="~/Scripts/croppie.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // activates the gender select list
+            (function () {
+                $('.nice-select').remove();
+                //$('.nice-select .form-control').parentNode.removeChild(element)
+            })()
+
+            var $uploadCrop
+            $(".upload-msg").click(function () {
+                $("#upload").click()
+            })
+
+            function readFile(input) {
+                $uploadCrop = $("#upload-demo").croppie({
+                    viewport: {
+                        width: 263,
+                        height: 339,
+                        type: 'square'
+                    },
+                    boundary: {
+                        width: 300,
+                        height: 400
+                    },
+                    enforceBoundary: true,
+                    showZoomer: true
+                });
+
+                if (input.files && input.files[0]) {
+                    if (/^image/.test(input.files[0].type)) { // only image file
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $uploadCrop.croppie('bind', {
+                                url: e.target.result
+                            });
+                            $('.upload-demo').addClass('ready');
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    } else {
+                        alert("You may only select image files");
+                    }
+                } else {
+                    alert("Sorry - your browser doesn't support FileReader API");
+                }
+            }
+
+            $('#upload').on('change', function () { readFile(this) })
+
+            $('.upload-result').on('click', function () {
+                $('#exampleModal').modal('hide')
+
+                $uploadCrop.croppie('result', {
+                    type: 'base64',
+                    size: 'jpeg'
+                }).then(function (resp) {
+                    $('#ImageString').attr('value', resp)
+                })
+                $('.fa-check').addClass('show')
+
+            })
+
+            //this reset the image selector
+            $(".reset").click(function () {
+
+                $('.upload-demo').removeClass('ready')
+                $('#upload-demo').removeClass()
+                $('.fa-check').removeClass('show');
+                $('#ImageString').attr('value', '')
+
+                // remove all div in the upload-demo element
+                let menu = document.getElementById('upload-demo');
+                while (menu.firstChild) {
+                    menu.removeChild(menu.firstChild);
+                }
+
+                $('#upload').val('') // this will clear the input val.
+                $uploadCrop = null;
+            })
+        })
+
+        function submitForm() {
+            $('.form').submit();
+        }
+    </script>
+}

@@ -1,0 +1,117 @@
+/* LOGIN STYLE */
+.login-wrap {
+    width: 70%;
+    padding: 70px 40px;
+}
+
+.login-box {
+    width: 100%;
+
+}
+
+.login-box .form-group label {
+    color: #0e0e0e;
+}
+
+.login-box .form-group > .form-control {
+    border: 1px solid #000;
+}
+
+
+/* LOGIN STYLE ends here */
+
+
+/* REGISTRATION STYLE */
+.reg-wrapper {
+    width: 100%;
+    overflow: scroll;
+}
+
+.reg-wrapper .reg__left {
+    min-height: 100vh;
+}
+
+.welcome-text h4 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+@media (max-width: 600px) {
+    .reg-wrapper .reg__left {
+        min-height: 40vh;
+    }
+
+    .welcome-text h4 {
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+}
+
+.form-wrapper .form-group label {
+    font-size: .785rem;
+    line-height: 1.6;
+    color: #111111;
+}
+.form-wrapper .form-group > .form-control {
+    border: 1px solid #6f6459;
+    border-radius: .15rem;
+    -webkit-border-radius: .15rem;
+    -moz-border-radius: .15rem;
+    -ms-border-radius: .15rem;
+    -o-border-radius: .15rem;
+}
+
+.btn-upload {
+    background: #1f1d1d;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: .87rem;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.btn-reg {
+    background: #1f1d1d;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .87rem;
+    line-height: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+.btn:hover {
+    color: #ccc;
+}
+
+.fixed {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+.reg__right {
+    padding: 80px 8% 20px;
+}
+
+.reg__left {
+    padding: 80px 8% 20px;
+}
+
+legend {
+    text-transform: uppercase;
+    font-size: .87rem;
+    line-height: 2;
+    font-weight: bold;
+}
+/* REGISTRATION STYLE ENDS */

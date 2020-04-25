@@ -1,0 +1,253 @@
+﻿@using Microsoft.Ajax;
+@model IEnumerable<NUJ_Oyo_State.Models.MembershipRequestVM>
+
+@{
+    ViewBag.Title = "Requests";
+
+    AjaxOptions options = new AjaxOptions();
+    options.HttpMethod = "POST";
+    
+}
+
+<section class="padding_top">
+    @if (Model.Count() == 0)
+    {
+        <h5>There are currently no request</h5>
+    }
+    else if (Model.Count() == 1)
+    {
+        if (TempData["SM"] != null)
+        {
+            if (TempData["SM"].ToString().Contains("successfully"))
+            {
+                <div class="alert alert-success">
+                    @TempData["SM"]
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+                    @TempData["SM"]
+                </div>
+            }
+        }
+
+        foreach (var item in Model)
+        {
+            <div>
+                <span class="font-weight-bold">@item.MembershipId</span>
+                <span><img src="@item.ImageString" /></span>
+            </div>
+            <div class="row">
+                <div class="col-1 col-md-6">
+                    <p>Name: @item.FirstName.ToUpper() @item.OtherNames</p>
+                    <p>Gender: @item.Gender</p>
+                    <p>Date of Birth: @item.DOB</p>
+                    <p>State of Origin: @item.StateOfOrigin</p>
+                    <p>Phone: @item.Phone</p>
+                    <p>Email: @item.Email</p>
+                </div>
+                <div class="col-1 col-md-6">
+                    <p>Address: @item.Address</p>
+                    <p>City: @item.City</p>
+                    <p>State: @item.State</p>
+                    <p>Zip: @item.Zip</p>
+                    <p>Branch: @item.Branch</p>
+                    <p>Designation: @item.Designation</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <h2 class="font-weight-bold">Requests</h2>
+
+        <table id="cart" class="table table-hover table-condensed cart">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="width: 40%">Name</th>
+                    <th style="width: 10%">Member Id</th>
+                    <th style="width: 14%">Branch</th>
+                    <th style="width: 14%">Designation</th>
+                    <th style="width: 22%"></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td data-th="Name">
+                            <p>@item.FirstName.ToUpper()  @item.OtherNames</p>
+                        </td>
+                        <td data-th="Member Id">
+                            <p>@item.MembershipId</p>
+                        </td>
+                        <td data-th="Branch">
+                            <p>@item.Branch</p>
+                        </td>
+                        <td data-th="Designation">
+                            <p>@item.Designation</p>
+                        </td>
+                        <td class="actions" data-th="">
+                            <a href="~/account/requests/@item.Id">Details</a> |
+
+                            @Ajax.ActionLink("Approve", "Approve", new { id = @item.Id }, options)
+                            |
+
+                            <a href="~/account/decline/@item.Id">Decline</a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="hidden-xs"></td>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <td>
+                            <a href="/checkout/checkout">Approve All</a> |
+                            <a href="/checkout/checkout">Decline All</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            @Html.ActionLink("Checkout", "Login", "Account", new { returnUrl = Request.Url.AbsolutePath }, new { @class = "btn btn-pry btn-block angle-right" })
+                        </td>
+                    }
+
+                </tr>
+            </tfoot>
+        </table>
+    }
+    @*<div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.OtherNames)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.OtherNames)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Gender)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DOB)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DOB)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StateOfOrigin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StateOfOrigin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.City)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.City)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.State)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.State)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Zip)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Zip)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.MembershipId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MembershipId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Branch)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Branch)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Designation)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Designation)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ImageString)
+                </dt>
+
+                <dd>
+                    <img src="@Model.ImageString" alt="@Model.FirstName @Model.OtherNames" />
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Approve", "Approve", new { id = Model.Id }) |
+            @Html.ActionLink("Decline", "Index")
+        </p>*@
+</section>
