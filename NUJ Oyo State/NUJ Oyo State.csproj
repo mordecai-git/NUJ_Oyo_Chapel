@@ -243,6 +243,13 @@
     <Content Include="img\excos\nuj-2.png" />
     <Content Include="img\excos\secretary.png" />
     <Content Include="img\favicon.png" />
+    <Content Include="img\gallery\01.jpg" />
+    <Content Include="img\gallery\02.jpg" />
+    <Content Include="img\gallery\03.jpg" />
+    <Content Include="img\gallery\04.jpg" />
+    <Content Include="img\gallery\05.jpg" />
+    <Content Include="img\gallery\06.jpg" />
+    <Content Include="img\gallery\07.jpg" />
     <Content Include="img\icon\banner_1.svg" />
     <Content Include="img\icon\banner_2.svg" />
     <Content Include="img\icon\banner_3.svg" />
