@@ -2424,6 +2424,7 @@ ul {
   /* line 163, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_menu.scss */
   .navbar-nav {
     align-items: start !important;
+    padding: 0.7rem 0 !important;
   }
   /* line 168, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_menu.scss */
   .dropdown .dropdown-menu {
