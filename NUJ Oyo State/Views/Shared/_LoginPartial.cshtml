@@ -15,9 +15,10 @@
 }
 else
 {
+
     <ul class="navbar-nav navbar-right">
         <li class="nav-item">
-            @Html.ActionLink("Register", "Register", "Account", routeValues: new { returnUrl = Request.Url.AbsolutePath }, htmlAttributes: new { @class = "nav-link", id = "registerLink" })
+            @Html.ActionLink("Register", "Register", "Account", routeValues: new { returnUrl = Request.Url.AbsolutePath }, htmlAttributes: new { @class = "nav-link genric-btn danger circle", id = "registerLink" })
         </li>
         <li class="nav-item">
             @Html.ActionLink("Log in", "Login", "Account", routeValues: new { returnUrl = Request.Url.AbsolutePath }, htmlAttributes: new { @class = "nav-link", id = "loginLink" })

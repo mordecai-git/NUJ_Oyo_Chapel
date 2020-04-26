@@ -14,6 +14,11 @@ namespace NUJ_Oyo_State.Controllers
             return View();
         }
 
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             return View();

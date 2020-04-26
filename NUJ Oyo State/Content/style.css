@@ -2963,7 +2963,7 @@ ul {
 /* line 202, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_about_us.scss */
 .single_about_padding {
   padding: 140px 0 0;
-  margin-bottom: 515px;
+  margin-bottom: 150px;
 }
 
 @media (max-width: 991px) {
@@ -4185,7 +4185,7 @@ ul {
 /* line 75, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_elements.scss */
 .sample-text-area {
   background: #fff;
-  padding: 100px 0 70px 0;
+  padding: 40px 0 70px 0;
 }
 
 /* line 80, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_elements.scss */
@@ -4200,7 +4200,7 @@ sup,
 sub,
 u,
 del {
-  color: #0065e1;
+  color: #00e18b;
 }
 
 /* line 93, ../../01 cl html template/03_jun 2019/182_medico_html/sass/_elements.scss */
