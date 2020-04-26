@@ -27,22 +27,29 @@
 
                         <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
+                                
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    @Html.ActionLink("Home", "index", null, new { @class = "nav-link" })
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">about</a>
+                                    @Html.ActionLink("About", "about", null, new { @class = "nav-link" })
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="executives.html">Executive</a>
+                                    @Html.ActionLink("Executives", "executives", null, new { @class = "nav-link" })
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#blog">Blog</a>
+                                    @Html.ActionLink("Blog", "blog", null, new { @class = "nav-link" })
                                 </li>
+
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    @Html.ActionLink("Contact", "contact", null, new { @class = "nav-link" })
                                 </li>
+
                                 @Html.Partial("_LoginPartial")
+
                             </ul>
                         </div>
 
