@@ -356,7 +356,6 @@
     <Content Include="Views\Account\Approve.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\Members.cshtml" />
-    <Content Include="Views\Home\Blog.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\SinglePageNews.cshtml" />
   </ItemGroup>
