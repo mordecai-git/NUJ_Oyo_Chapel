@@ -265,6 +265,8 @@
     <Content Include="img\learning_img_bg.png" />
     <Content Include="img\login\background.jpg" />
     <Content Include="img\login\NUJ.png" />
+    <Content Include="img\login\sign-up-01.jpg" />
+    <Content Include="img\login\sign-up.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\post\next.png" />
     <Content Include="img\post\post_1.png" />
