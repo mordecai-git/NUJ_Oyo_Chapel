@@ -11,54 +11,54 @@
 <body>
     @if (ViewBag.Title != "NUJ - Login" && ViewBag.Title != "NUJ - Register")
     {
-    <header class="main_menu">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="~/img/logo.png" alt="logo">
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+        <header class="main_menu">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html">
+                                <img src="~/img/logo.png" alt="logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-                        <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
-                            <ul class="navbar-nav align-items-center">
-                                
-                                <li class="nav-item active">
-                                    @Html.ActionLink("Home", "index", null, new { @class = "nav-link" })
-                                </li>
+                            <div class="collapse navbar-collapse main-menu-item justify-content-center" id="navbarSupportedContent">
+                                <ul class="navbar-nav align-items-center">
 
-                                <li class="nav-item">
-                                    @Html.ActionLink("About", "about", null, new { @class = "nav-link" })
-                                </li>
+                                    <li class="nav-item active">
+                                        @Html.ActionLink("Home", "index", null, new { @class = "nav-link" })
+                                    </li>
 
-                                <li class="nav-item">
-                                    @Html.ActionLink("Executives", "executives", null, new { @class = "nav-link" })
-                                </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("About", "about", null, new { @class = "nav-link" })
+                                    </li>
 
-                                <li class="nav-item">
-                                    @Html.ActionLink("Blog", "blog", null, new { @class = "nav-link" })
-                                </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Executives", "members", null, new { @class = "nav-link" })
+                                    </li>
 
-                                <li class="nav-item">
-                                    @Html.ActionLink("Contact", "contact", null, new { @class = "nav-link" })
-                                </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Blog", "blog", null, new { @class = "nav-link" })
+                                    </li>
 
-                                @Html.Partial("_LoginPartial")
+                                    <li class="nav-item">
+                                        @Html.ActionLink("Contact", "contact", null, new { @class = "nav-link" })
+                                    </li>
 
-                            </ul>
-                        </div>
+                                    @Html.Partial("_LoginPartial")
 
-                    </nav>
+                                </ul>
+                            </div>
+
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    }
+        </header>
+     }
 
     <div class="body-content">
         @RenderBody()
@@ -67,54 +67,53 @@
     @if (ViewBag.Title != "NUJ - Login" && ViewBag.Title != "NUJ - Register")
     {
         <!-- footer part start-->
-<footer class="footer-area">
-    <div class="footer section_padding">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-xl-4 col-md-4 col-sm-6 single-footer-widget">
-                    <a href="#" class="footer_logo"> <img src="~/img/logo.png" alt="#"> </a>
-                    <p>Nigeria Union of Journalists founded on the 15th of March, 1955 in Lagos, was linked to the struggle for the independence of Nigeria.</p>
-                    <div class="social_logo">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"> <i class="ti-twitter"></i> </a>
-                        <a href="#"><i class="ti-instagram"></i></a>
+        <footer class="footer-area">
+            <div class="footer section_padding">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-4 col-md-4 col-sm-6 single-footer-widget">
+                            <a href="#" class="footer_logo"> <img src="~/img/logo.png" alt="#"> </a>
+                            <p>Nigeria Union of Journalists founded on the 15th of March, 1955 in Lagos, was linked to the struggle for the independence of Nigeria.</p>
+                            <div class="social_logo">
+                                <a href="#"><i class="ti-facebook"></i></a>
+                                <a href="#"> <i class="ti-twitter"></i> </a>
+                                <a href="#"><i class="ti-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li>@Html.ActionLink("About", "about")</li>
+                                <li>@Html.ActionLink("Members", "members")</li>
+                                <li>@Html.ActionLink("News/Blog", "news")</li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-4 col-sm-6 col-md-6 single-footer-widget">
+                            <h4>Our Press Centre</h4>
+                            <p>Iyaganku Government Reservation Area, GRA Ibadan.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-sm-6 col-md-4 single-footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Executives</a></li>
-                        <li><a href="#">News/Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-xl-4 col-sm-6 col-md-6 single-footer-widget">
-                    <h4>Our Press Centre</h4>
-                    <p>Iyaganku Government Reservation Area, GRA Ibadan.</p>
-                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="copyright_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <p class="footer-text m-0 col-lg-8 col-md-12">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy; NUJ OYO STATE CHAPTER
-                    <script>document.write(new Date().getFullYear());</script>. All rights reserved
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-                <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
-                    <a href="#"><i class="ti-facebook"></i></a>
-                    <a href="#"> <i class="ti-twitter"></i> </a>
-                    <a href="#"><i class="ti-instagram"></i></a>
+            <div class="copyright_part">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <p class="footer-text m-0 col-lg-8 col-md-12">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; NUJ OYO STATE CHAPTER
+                            <script>document.write(new Date().getFullYear());</script>. All rights reserved
+                        </p>
+                        <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                            <a href="#"><i class="ti-facebook"></i></a>
+                            <a href="#"> <i class="ti-twitter"></i> </a>
+                            <a href="#"><i class="ti-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</footer>
-    }
+        </footer>
+     }
 
         @Scripts.Render("~/bundles/js")
         @RenderSection("scripts", required: false)

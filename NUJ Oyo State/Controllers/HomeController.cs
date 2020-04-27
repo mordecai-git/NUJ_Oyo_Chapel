@@ -19,6 +19,21 @@ namespace NUJ_Oyo_State.Controllers
             return View();
         }
 
+        public ActionResult Members()
+        {
+            return View();
+        }
+
+        public ActionResult News()
+        {
+            return View();
+        }
+
+        public ActionResult SinglePageNews()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             return View();
