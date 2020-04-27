@@ -6,7 +6,6 @@
 
 .login-box {
     width: 100%;
-
 }
 
 .login-box .form-group label {
@@ -24,7 +23,7 @@
 /* REGISTRATION STYLE */
 .reg-wrapper {
     width: 100%;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .reg-wrapper .reg__left {
@@ -163,3 +162,11 @@ legend {
 /* REGISTRATION STYLE ENDS */
 
 /* EXCOS */
+
+@media (max-width: 450px) {
+    .login-wrap {
+        width: 100%;
+        padding: 70px 20px;
+        max-height: 100%;
+    }
+}

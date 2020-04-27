@@ -1,11 +1,13 @@
 ﻿@using NUJ_Oyo_State.Models
 @model LoginViewModel
+
 @{
     ViewBag.Title = "NUJ - Login";
 }
     <link href="~/Content/auth.css" rel="stylesheet" />
 
     <section>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -15,7 +17,7 @@
                                 <div class="login-wrap-head text-center">
                                     <img src="~/img/logo.png" alt="NUJ OYO Logo" />
 
-                                    <p>Welcome back</p>
+                                    <h3>Welcome back</h3>
                                 </div>
 
                                 <div class="login-box">
@@ -42,7 +44,7 @@
                                         <button type="submit" class="btn my-3 btn-block btn-primary">LOGIN</button>
                                     }
 
-                                <p class="text-center my-2">Don't have an account? @Html.ActionLink("Create one", "Register") </p>
+                                    <p class="text-center my-2">Don't have an account? @Html.ActionLink("Create one", "Register") </p>
                                 </div>
                             </div>  
                         </div>

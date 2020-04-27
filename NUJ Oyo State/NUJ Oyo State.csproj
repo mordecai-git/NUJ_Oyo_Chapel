@@ -264,6 +264,7 @@
     <Content Include="img\icon\star.svg" />
     <Content Include="img\learning_img_bg.png" />
     <Content Include="img\login\background.jpg" />
+    <Content Include="img\login\login.jpg" />
     <Content Include="img\login\NUJ.png" />
     <Content Include="img\login\sign-up-01.jpg" />
     <Content Include="img\login\sign-up.jpg" />
