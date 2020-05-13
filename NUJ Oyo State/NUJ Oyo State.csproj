@@ -268,7 +268,9 @@
     <Content Include="img\login\NUJ.png" />
     <Content Include="img\login\sign-up-01.jpg" />
     <Content Include="img\login\sign-up.jpg" />
+    <Content Include="img\logo-fix.png" />
     <Content Include="img\logo.png" />
+    <Content Include="img\logo-old.png" />
     <Content Include="img\post\next.png" />
     <Content Include="img\post\post_1.png" />
     <Content Include="img\post\post_10.png" />
