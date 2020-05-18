@@ -26,7 +26,6 @@ namespace NUJ_Oyo_State.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Members()
         {
             List<User> users = db.Users.ToList();
@@ -35,6 +34,7 @@ namespace NUJ_Oyo_State.Controllers
             {
                 MembersVM member = new MembersVM()
                 {
+                    Title=user.Title,
                     FirstName = user.FirstName,
                     OtherNames = user.OtherNames,
                     Designation = user.Designation,

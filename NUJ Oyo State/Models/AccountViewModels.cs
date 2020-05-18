@@ -119,6 +119,7 @@ namespace NUJ_Oyo_State.Models
         public MembershipRequestVM(MembershipRequestDTO row)
         {
             Id = row.Id;
+            Title = row.Title;
             FirstName = row.FirstName;
             OtherNames = row.OtherNames;
             Gender = row.Gender;
@@ -142,6 +143,8 @@ namespace NUJ_Oyo_State.Models
         }
 
         public int Id { get; set; }
+
+        public string Title { get; set; }
 
         [Required]
         [Display(Name = "First Name")]

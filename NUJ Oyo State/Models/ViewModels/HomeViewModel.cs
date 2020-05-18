@@ -4,6 +4,7 @@ namespace NUJ_Oyo_State.Models.ViewModels
 {
     public class MembersVM
     {
+        public string Title { get; set; }
         public string FirstName { get; set; }
         public string OtherNames { get; set; }
         public string Designation { get; set; }

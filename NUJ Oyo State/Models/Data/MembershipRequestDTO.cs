@@ -9,6 +9,7 @@ namespace NUJ_Oyo_State.Models.Data
     {
         [Key]
         public int Id { get; set; }
+        public string Title { get; set; }
         public string FirstName { get; set; }
         public string OtherNames { get; set; }
         public string Gender { get; set; }
