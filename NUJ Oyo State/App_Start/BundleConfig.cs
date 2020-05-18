@@ -39,7 +39,9 @@ namespace NUJ_Oyo_State
                       "~/Content/owl.carousel.min.css",
                       "~/Content/themify-icons.css",
                       "~/Content/carousel.css",
-                      "~/Content/style.css"));
+                      "~/Content/style.css",
+                      "~/Content/Site.css"));
+                
         }
     }
 }

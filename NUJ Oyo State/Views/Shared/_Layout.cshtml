@@ -16,9 +16,10 @@
                 <div class="row align-items-center">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="~/img/logo.png" alt="logo">
+                            <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                                <img src=@Url.Content("~/img/logo-fix.png") alt="logo">
                             </a>
+
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                     aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +73,7 @@
                 <div class="container">
                     <div class="row justify-content-between">
                         <div class="col-xl-4 col-md-4 col-sm-6 single-footer-widget">
-                            <a href="#" class="footer_logo"> <img src="~/img/logo.png" alt="#"> </a>
+                            <a href="#" class="footer_logo"> <img src="~/img/logo-fix.png" alt="#"> </a>
                             <p>Nigeria Union of Journalists founded on the 15th of March, 1955 in Lagos, was linked to the struggle for the independence of Nigeria.</p>
                             <div class="social_logo">
                                 <a href="#"><i class="ti-facebook"></i></a>
@@ -117,5 +118,6 @@
 
         @Scripts.Render("~/bundles/js")
         @RenderSection("scripts", required: false)
+
     </body>
 </html>
