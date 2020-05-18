@@ -58,7 +58,23 @@
                 </div>
             </div>
         </header>
-     }
+
+        <!-- breadcrumb start-->
+        <section class="breadcrumb_part breadcrumb_bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb_iner">
+                            <div class="breadcrumb_iner_item">
+                                <h2>@ViewBag.Title</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb start-->
+    }
 
     <div class="body-content">
         @RenderBody()
@@ -113,9 +129,9 @@
                 </div>
             </div>
         </footer>
-     }
+    }
 
-        @Scripts.Render("~/bundles/js")
-        @RenderSection("scripts", required: false)
-    </body>
+    @Scripts.Render("~/bundles/js")
+    @RenderSection("scripts", required: false)
+</body>
 </html>
