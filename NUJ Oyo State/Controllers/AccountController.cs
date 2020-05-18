@@ -89,6 +89,7 @@ namespace NUJ_Oyo_State.Controllers
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
+                // notify user to change password and confirm email upon login if email is not confirmed yet.
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
@@ -185,9 +186,33 @@ namespace NUJ_Oyo_State.Controllers
                 gender = "Female";
             }
 
+            // set title
+            string title;
+            if (model.Title == "1")
+            {
+                title = "Comrade";
+            }
+            else if(model.Title=="2")
+            {
+                title = "Alhaji";
+            }
+            else if (model.Title == "3")
+            {
+                title = "Alhaja";
+            }
+            else if (model.Title == "4")
+            {
+                title = "Senato";
+            }
+            else
+            {
+                title = "Comrade";
+            }
+
             // init membershipRequest
             MembershipRequestDTO membershipRequest = new MembershipRequestDTO()
             {
+                Title = title,
                 FirstName = model.FirstName,
                 OtherNames = model.OtherNames,
                 Gender = gender,
@@ -674,6 +699,7 @@ namespace NUJ_Oyo_State.Controllers
                 {
                     UserName = requestDTO.Email,
                     Email = requestDTO.Email,
+                    Title=requestDTO.Title,
                     FirstName = requestDTO.FirstName,
                     OtherNames = requestDTO.OtherNames,
                     Gender = requestDTO.Gender,
@@ -716,6 +742,9 @@ namespace NUJ_Oyo_State.Controllers
                 var result = await UserManager.CreateAsync(user, defaultPassword);
                 if (result.Succeeded)
                 {
+                    // save phone number for the user
+                    await UserManager.SetPhoneNumberAsync(user.Id, requestDTO.Phone);
+
                     // save user image
                     ImagesDTO userImage = new ImagesDTO
                     {
@@ -882,7 +911,7 @@ namespace NUJ_Oyo_State.Controllers
             }
         }
 
-                          
+
 
 
 
