@@ -208,9 +208,7 @@
     <Content Include="Content\magnific-popup.css" />
     <Content Include="Content\nice-select.css" />
     <Content Include="Content\owl.carousel.min.css" />
-    <Content Include="Content\slick.css" />
     <Content Include="Content\style.css" />
-    <Content Include="Content\swiper.min.css" />
     <Content Include="Content\themify-icons.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\themify.svg" />
@@ -230,10 +228,8 @@
     <Content Include="img\blog\single_blog_4.png" />
     <Content Include="img\blog\single_blog_5.png" />
     <Content Include="img\blog\slide_thumb_1.png" />
+    <Content Include="img\breadcrumb-plain-2.png" />
     <Content Include="img\breadcrumb.png" />
-    <Content Include="img\comment\comment_1.png" />
-    <Content Include="img\comment\comment_2.png" />
-    <Content Include="img\comment\comment_3.png" />
     <Content Include="img\cource\cource_1.png" />
     <Content Include="img\cource\cource_2.png" />
     <Content Include="img\cource\cource_3.png" />
@@ -241,31 +237,6 @@
     <Content Include="img\doctor\doctor_2.png" />
     <Content Include="img\doctor\doctor_3.png" />
     <Content Include="img\doctor\doctor_4.png" />
-    <Content Include="img\elements\a.jpg" />
-    <Content Include="img\elements\a2.jpg" />
-    <Content Include="img\elements\d.jpg" />
-    <Content Include="img\elements\disabled-check.png" />
-    <Content Include="img\elements\disabled-radio.png" />
-    <Content Include="img\elements\f1.jpg" />
-    <Content Include="img\elements\f2.jpg" />
-    <Content Include="img\elements\f3.jpg" />
-    <Content Include="img\elements\f4.jpg" />
-    <Content Include="img\elements\f5.jpg" />
-    <Content Include="img\elements\f6.jpg" />
-    <Content Include="img\elements\f7.jpg" />
-    <Content Include="img\elements\f8.jpg" />
-    <Content Include="img\elements\g1.jpg" />
-    <Content Include="img\elements\g2.jpg" />
-    <Content Include="img\elements\g3.jpg" />
-    <Content Include="img\elements\g4.jpg" />
-    <Content Include="img\elements\g5.jpg" />
-    <Content Include="img\elements\g6.jpg" />
-    <Content Include="img\elements\g7.jpg" />
-    <Content Include="img\elements\g8.jpg" />
-    <Content Include="img\elements\primary-check.png" />
-    <Content Include="img\elements\primary-radio.png" />
-    <Content Include="img\elements\success-check.png" />
-    <Content Include="img\elements\success-radio.png" />
     <Content Include="img\excos\01.jpg" />
     <Content Include="img\excos\ass_sec.png" />
     <Content Include="img\excos\chairmain.jpg" />
@@ -273,6 +244,13 @@
     <Content Include="img\excos\nuj-2.png" />
     <Content Include="img\excos\secretary.png" />
     <Content Include="img\favicon.png" />
+    <Content Include="img\gallery\01.jpg" />
+    <Content Include="img\gallery\02.jpg" />
+    <Content Include="img\gallery\03.jpg" />
+    <Content Include="img\gallery\04.jpg" />
+    <Content Include="img\gallery\05.jpg" />
+    <Content Include="img\gallery\06.jpg" />
+    <Content Include="img\gallery\07.jpg" />
     <Content Include="img\icon\banner_1.svg" />
     <Content Include="img\icon\banner_2.svg" />
     <Content Include="img\icon\banner_3.svg" />
@@ -286,7 +264,10 @@
     <Content Include="img\icon\star.svg" />
     <Content Include="img\learning_img_bg.png" />
     <Content Include="img\login\background.jpg" />
+    <Content Include="img\login\login.jpg" />
     <Content Include="img\login\NUJ.png" />
+    <Content Include="img\login\sign-up-01.jpg" />
+    <Content Include="img\login\sign-up.jpg" />
     <Content Include="img\logo.png" />
     <Content Include="img\post\next.png" />
     <Content Include="img\post\post_1.png" />
@@ -316,17 +297,14 @@
     <Content Include="fonts\themify.eot" />
     <Content Include="fonts\themify.ttf" />
     <Content Include="fonts\themify.woff" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\JS\bootstrap.min.js" />
     <Content Include="Scripts\JS\contact.js" />
@@ -380,14 +358,17 @@
     <Content Include="Views\Account\Test.cshtml" />
     <Content Include="Views\Account\Requests.cshtml" />
     <Content Include="Views\Account\Approve.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Members.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\SinglePageNews.cshtml" />
+    <Content Include="Views\Shared\_PagesLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\author\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
